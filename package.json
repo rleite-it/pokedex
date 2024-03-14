@@ -20,8 +20,8 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint"
+    "**/*.{js,jsx,ts,tsx,html,css,json}": [
+      "npx prettier --write"
     ]
   },
   "dependencies": {
