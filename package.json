@@ -6,13 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
     "format": "prettier --write .",
     "preview": "vite preview",
     "prepare": "husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "CI=true react-scripts test"
+    }
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -25,6 +30,8 @@
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.1.0",
+    "@commitlint/config-conventional": "^19.1.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/react": "^18.2.64",
